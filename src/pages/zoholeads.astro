@@ -1,0 +1,120 @@
+<form
+  action="https://crm.zoho.eu/crm/WebToLeadForm"
+  name="WebToLeads517833000000686011"
+  method="POST"
+  onSubmit='javascript:document.charset="UTF-8"; return checkMandatory517833000000686011()'
+  accept-charset="UTF-8"
+>
+  <input
+    type="text"
+    style="display:none;"
+    name="xnQsjsdp"
+    value="9940618c125b80ab1f14fd7055d1f0c7d4dba00b5c389ba8c2a3e259a9455f3d"
+  />
+  <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+  <input
+    type="text"
+    style="display:none;"
+    name="xmIwtLD"
+    value="ba1f51963728a3fc3fb020cb97d2531f42f27711a8999e339e4381eba5d61ee093d6d9e4505e65e23af85f297b6dea24"
+  />
+  <input type="text" style="display:none;" name="actionType" value="TGVhZHM=" />
+  <input type="text" style="display:none;" name="returnURL" value="https://notonlyseo.meerkating.solutions" />
+
+  <div>
+    <label for="First_Name">First Name<span style="color:red;">*</span></label>
+    <input type="text" id="First_Name" name="First Name" maxlength="40" />
+  </div>
+  <div>
+    <label for="Last_Name">Last Name<span style="color:red;">*</span></label>
+    <input type="text" id="Last_Name" name="Last Name" maxlength="80" />
+  </div>
+  <div>
+    <label for="Email">Email<span style="color:red;">*</span></label>
+    <input type="text" ftype="email" autocomplete="false" id="Email" name="Email" maxlength="100" />
+  </div>
+  <div>
+    <input type="submit" id="formsubmit" class="formsubmit zcwf_button" value="Submit" title="Submit" /><input
+      type="reset"
+      class="zcwf_button"
+      name="reset"
+      value="Reset"
+      title="Reset"
+    />
+  </div>
+  <script>
+    function validateEmail517833000000686011() {
+      var form = document.forms['WebToLeads517833000000686011'];
+      var emailFld = form.querySelectorAll('[ftype=email]');
+      var i;
+      for (i = 0; i < emailFld.length; i++) {
+        var emailVal = emailFld[i].value;
+        if (emailVal.replace(/^\s+|\s+$/g, '').length != 0) {
+          var atpos = emailVal.indexOf('@');
+          var dotpos = emailVal.lastIndexOf('.');
+          if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+            alert('Please enter a valid email address. ');
+            emailFld[i].focus();
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    function checkMandatory517833000000686011() {
+      var mndFileds = new Array('First Name', 'Last Name', 'Email');
+      var fldLangVal = new Array('First\x20Name', 'Last\x20Name', 'Email');
+      for (i = 0; i < mndFileds.length; i++) {
+        var fieldObj = document.forms['WebToLeads517833000000686011'][mndFileds[i]];
+        if (fieldObj) {
+          if (fieldObj.value.replace(/^\s+|\s+$/g, '').length == 0) {
+            if (fieldObj.type == 'file') {
+              alert('Please select a file to upload.');
+              fieldObj.focus();
+              return false;
+            }
+            alert(fldLangVal[i] + ' cannot be empty.');
+            fieldObj.focus();
+            return false;
+          } else if (fieldObj.nodeName == 'SELECT') {
+            if (fieldObj.options[fieldObj.selectedIndex].value == '-None-') {
+              alert(fldLangVal[i] + ' cannot be none.');
+              fieldObj.focus();
+              return false;
+            }
+          } else if (fieldObj.type == 'checkbox') {
+            if (fieldObj.checked == false) {
+              alert('Please accept  ' + fldLangVal[i]);
+              fieldObj.focus();
+              return false;
+            }
+          }
+          try {
+            if (fieldObj.name == 'Last Name') {
+              name = fieldObj.value;
+            }
+          } catch (e) {}
+        }
+      }
+      if (!validateEmail517833000000686011()) {
+        return false;
+      }
+      document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+    }
+
+    function tooltipShow517833000000686011(el) {
+      var tooltip = el.nextElementSibling;
+      var tooltipDisplay = tooltip.style.display;
+      if (tooltipDisplay == 'none') {
+        var allTooltip = document.getElementsByClassName('zcwf_tooltip_over');
+        for (i = 0; i < allTooltip.length; i++) {
+          allTooltip[i].style.display = 'none';
+        }
+        tooltip.style.display = 'block';
+      } else {
+        tooltip.style.display = 'none';
+      }
+    }
+  </script>
+</form>

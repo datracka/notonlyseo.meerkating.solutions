@@ -1,0 +1,115 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ZohoContact from '~/components/widgets/ZohoContact.astro';
+
+const metadata = {
+  title: 'Customer Discovery | Lead Activation  | Customer Data Platform',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="relative md:-mt-[76px] not-prose">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+      <div class="pt-12 md:pt-20">
+        <div class="text-center max-w-5xl mx-auto">
+          <h1
+            class="text-6xl md:text-7xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+          >
+            <span class="text-accent dark:text-white highlight">SEO no lo es todo.</span>
+          </h1>
+
+          <div class="max-w-3xl mx-auto pb-6">
+            <h2
+              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 font-heading dark:text-gray-200"
+            >
+              Hablemos de aumentar la tasa de conversión
+            </h2>
+          </div>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            Si estás aquí, es porque te has dado cuenta de que SOLO con SEO no se vive.
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            El futuro cliente llega a tu web mediante Google, pero no se queda. No se convierte. No compra. No te
+            contacta.
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">Y eso no es lo peor.</p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">Lo peor es que no sabes por qué.</p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            ¿Qué más ha hecho además de hacer clic en un enlace de Google? ¿Y si antes de eso, había hecho clic en un
+            anuncio de Facebook? ¿O en un correo electrónico que le habías enviado?
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            ¿Cómo sabes que es la misma persona? ¿Cómo interconectas toda la información que te esta dejando?
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            Nosotros conectamos todos estos datos y te los mostramos en una sola plataforma, para que puedas tomar
+            decisiones basadas en datos, y no en intuición.
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">Déjanos tu email y te contamos más</p>
+          <ZohoContact
+            disclaimer={{
+              label:
+                'Al enviar este formulario de contacto, reconoces y aceptas la recopilación de tu información personal.',
+            }}
+          />
+          <p
+            class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 font-heading dark:text-gray-200"
+          >
+            ¿Quieres más detalles?
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            El nexo de todo esto es un CDP (Customer Data Platform).
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            Piensa en un CDP como en un CRM pero enfocado en las interacciones de alguien con tu marca.
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">El CDP es el cerebro.</p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            Y al CDP le llegan datos procedentes de muchas fuentes: tu web, los correos electrónicos de tu marca,
+            Facebook Ads y así..
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            Lo importante que entiendas es que todos los datos son fusionados para que así tengas una visión unitaria y
+            personalizada de cada una de las personas que han interactuado con tu marca.
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            Es como Google Analytics, pero a lo bestia y por usuario.
+          </p>
+          <p
+            class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 font-heading dark:text-gray-200"
+          >
+            Más ventajas
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            Se integra a la perfección con Server Tracking para evitar que te capen los navegadores las analiticas
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            Permite integrar herramientas de Marketing Automation para crear la mejor forma de llegar a tus clientes
+            en el momento oportuno.
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            Podrás saber en tiempo real cuando alguien interactúa con tu marca y conectar con él en ese mismo momento.
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            Es el primer paso para la segmentación de contenido por usuario.
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            Tendrás un panel de control con métricas centradas en tu cliente.
+          </p>
+          <p class="text-xl text-muted mb-6 dark:text-slate-300">
+            ¿Quieres un ejemplo? Escríbenos y agendamos una reunión donde te mostraremos las posibilidades.
+          </p>
+          <ZohoContact
+            disclaimer={{
+              label:
+                'Al enviar este formulario de contacto, reconoces y aceptas la recopilación de tu información personal.',
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

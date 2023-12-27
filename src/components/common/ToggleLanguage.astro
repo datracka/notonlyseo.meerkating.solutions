@@ -1,0 +1,35 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import { UI, I18N } from '~/utils/config';
+
+export interface Props {
+  label?: string;
+  class?: string;
+  iconClass?: string;
+  iconName?: string;
+}
+
+export function getLangFromUrl(url: URL) {
+  const [, lang] = url.pathname.split('/');
+  if (lang && I18N.languages.includes(lang)) {
+    return lang;
+  }
+  return I18N.defaultLanguage;
+}
+
+// it works because is a dycotomy between two languages
+const language = getLangFromUrl(Astro.url) === "es" ? "en" : "es";
+
+const {
+  label = 'Toggle between Languages',
+  class:
+    className = 'text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center',
+  iconClass = 'w-6 h-6',
+  iconName = 'tabler:language',
+} = Astro.props;
+---
+
+<a href={language} aria-label={label} class={className}>
+  <Icon name={iconName} class={iconClass} />
+</a>

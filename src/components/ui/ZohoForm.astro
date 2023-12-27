@@ -1,0 +1,160 @@
+---
+import type { Form } from '~/types';
+import Button from '~/components/ui/Button.astro';
+
+const { disclaimer, button = 'Quiero saber más', description = '' } = Astro.props as Form;
+---
+
+<form
+  action="https://crm.zoho.eu/crm/WebToLeadForm"
+  name="WebToLeads517833000000686011"
+  method="POST"  
+  onsubmit='javascript:document.charset="UTF-8"; return checkMandatory517833000000686011()'
+  accept-charset="UTF-8"
+>
+  <input
+    type="text"
+    style="display:none;"
+    name="xnQsjsdp"
+    value="9940618c125b80ab1f14fd7055d1f0c7d4dba00b5c389ba8c2a3e259a9455f3d"
+  />
+  <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+  <input
+    type="text"
+    style="display:none;"
+    name="xmIwtLD"
+    value="ba1f51963728a3fc3fb020cb97d2531f42f27711a8999e339e4381eba5d61ee093d6d9e4505e65e23af85f297b6dea24"
+  />
+  <input type="text" style="display:none;" name="actionType" value="TGVhZHM=" />
+  <input type="text" style="display:none;" name="returnURL" value="https://notonlyseo.meerkating.solutions" />
+  <div class="mb-6">
+    <input
+      type="text"
+      name="First Name"
+      id="First_Name"
+      autocomplete="on"
+      placeholder="John"
+      class="mb-4 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+    />
+    <input
+      type="text"
+      name="Last Name"
+      id="Last_Name"
+      autocomplete="on"
+      placeholder="Sample"
+      class="mb-4 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+    />
+    <input
+      type="text"
+      name="Email"
+      id="Email"
+      autocomplete="on"
+      placeholder="john.sample@xyz.com"
+      class="mb-4 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+    />
+  </div>
+
+  {
+    disclaimer && (
+      <div class="mt-3 flex items-start">
+        <div class="ml-3">
+          <label for="disclaimer" class="cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400">
+            {disclaimer.label}
+          </label>
+        </div>
+      </div>
+    )
+  }
+  {
+    button && (
+      <div class="mt-10 grid">
+        <Button variant="primary" type="submit">
+          {button}
+        </Button>
+      </div>
+    )
+  }
+
+  {
+    description && (
+      <div class="mt-3 text-center">
+        <p class="text-sm text-gray-600 dark:text-gray-400">{description}</p>
+      </div>
+    )
+  }
+  <script is:inline>
+    function validateEmail517833000000686011() {
+      var form = document.forms['WebToLeads517833000000686011'];
+      var emailFld = form.querySelectorAll('[ftype=email]');
+      var i;
+      for (i = 0; i < emailFld.length; i++) {
+        var emailVal = emailFld[i].value;
+        if (emailVal.replace(/^\s+|\s+$/g, '').length != 0) {
+          var atpos = emailVal.indexOf('@');
+          var dotpos = emailVal.lastIndexOf('.');
+          if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+            alert('Please enter a valid email address. ');
+            emailFld[i].focus();
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    function checkMandatory517833000000686011() {
+      var mndFileds = new Array('First Name', 'Last Name', 'Email');
+      var fldLangVal = new Array('First\x20Name', 'Last\x20Name', 'Email');
+      for (i = 0; i < mndFileds.length; i++) {
+        var fieldObj = document.forms['WebToLeads517833000000686011'][mndFileds[i]];
+        if (fieldObj) {
+          if (fieldObj.value.replace(/^\s+|\s+$/g, '').length == 0) {
+            if (fieldObj.type == 'file') {
+              alert('Please select a file to upload.');
+              fieldObj.focus();
+              return false;
+            }
+            alert(fldLangVal[i] + ' cannot be empty.');
+            fieldObj.focus();
+            return false;
+          } else if (fieldObj.nodeName == 'SELECT') {
+            if (fieldObj.options[fieldObj.selectedIndex].value == '-None-') {
+              alert(fldLangVal[i] + ' cannot be none.');
+              fieldObj.focus();
+              return false;
+            }
+          } else if (fieldObj.type == 'checkbox') {
+            if (fieldObj.checked == false) {
+              alert('Please accept  ' + fldLangVal[i]);
+              fieldObj.focus();
+              return false;
+            }
+          }
+          try {
+            if (fieldObj.name == 'Last Name') {
+              name = fieldObj.value;
+            }
+          } catch (e) {}
+        }
+      }
+      if (!validateEmail517833000000686011()) {
+        return false;
+      }
+      document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+    }
+
+    function tooltipShow517833000000686011(el) {
+      var tooltip = el.nextElementSibling;
+      var tooltipDisplay = tooltip.style.display;
+      if (tooltipDisplay == 'none') {
+        var allTooltip = document.getElementsByClassName('zcwf_tooltip_over');
+        for (i = 0; i < allTooltip.length; i++) {
+          allTooltip[i].style.display = 'none';
+        }
+        tooltip.style.display = 'block';
+      } else {
+        tooltip.style.display = 'none';
+      }
+    }
+  </script>
+</form>
