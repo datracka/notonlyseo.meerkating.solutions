@@ -2,6 +2,7 @@
 import Logo from '~/components/Logo.astro';
 import { getHomePermalink } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
+import ToggleLanguage from '~/components/common/ToggleLanguage.astro';
 
 interface Link {
   text?: string;
@@ -29,14 +30,7 @@ export interface Props {
   position?: string;
 }
 
-const {
-  id = 'header',
-  isSticky = false,
-  isDark = false,
-  isFullWidth = false,
-  position = 'center',
-} = Astro.props;
-
+const { id = 'header', isSticky = false, isDark = false, isFullWidth = false, position = 'center' } = Astro.props;
 ---
 
 <header
@@ -60,5 +54,6 @@ const {
         <Logo />
       </a>
     </div>
+    <ToggleLanguage iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />
   </div>
 </header>
